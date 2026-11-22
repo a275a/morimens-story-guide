@@ -162,10 +162,23 @@ byId("resume").onclick=()=>{
  const next=byId("list").querySelector("input:not(:checked)");
  if(next){next.focus({preventScroll:true});next.scrollIntoView({block:"center"})}
 };
-for(const promo of promos){
- const entry=element("div","row");
- entry.append(element("span","",promo.title),promoLink(promo));
- byId("pv-list").append(entry);
+const pvList = byId("pv-list");
+function appendPromoGroup(title, items) {
+  if (!items.length) return;
+  pvList.append(element("h3", "subhead", title));
+  for (const promo of items) {
+    const entry = element("div", "row");
+    entry.append(element("span", "", promo.title), promoLink(promo));
+    pvList.append(entry);
+  }
 }
+for (const arc of ["m", "s"]) {
+  const items = order[arc].flatMap(id => promos.filter(promo => promo.story === id));
+  appendPromoGroup(arcs[arc], items);
+}
+const timelineIds = new Set([...order.m, ...order.s]);
+const unplaced = promos.filter(promo => !timelineIds.has(promo.story))
+  .sort((a, b) => a.title.localeCompare(b.title, "ko", {numeric:true}));
+appendPromoGroup("스토리 시점 미확인 · 버전순", unplaced);
 render();
 </script></html>
