@@ -172,13 +172,10 @@ function appendPromoGroup(title, items) {
     pvList.append(entry);
   }
 }
-for (const arc of ["m", "s"]) {
-  const items = order[arc].flatMap(id => promos.filter(promo => promo.story === id));
-  appendPromoGroup(arcs[arc], items);
-}
-const timelineIds = new Set([...order.m, ...order.s]);
-const unplaced = promos.filter(promo => !timelineIds.has(promo.story))
+const kadathPromos = order.m.flatMap(id => promos.filter(promo => promo.story === id));
+const astralPromos = promos.filter(promo => /^V2\./.test(promo.title))
   .sort((a, b) => a.title.localeCompare(b.title, "ko", {numeric:true}));
-appendPromoGroup("스토리 시점 미확인 · 버전순", unplaced);
+appendPromoGroup(arcs.m, kadathPromos);
+appendPromoGroup(arcs.s, astralPromos);
 render();
 </script></html>
