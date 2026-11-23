@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>망각전야 · 스토리 가이드</title>
@@ -26,7 +27,7 @@ header p{color:#efe9dc}
 // 각 장의 따옴표 안에 영상 주소를 입력하세요. m은 망각편, s는 성신편입니다.
 const VIDEO_URLS = {
   m0:"https://youtu.be/QsjQADjgLRA?si=2BQBsuqAATri2aYe", m1:"https://youtu.be/87nwvLG3kC0?si=VanitGDgCgkj9w4L", m2:"https://youtu.be/T9gqtGsw7cw?si=NcvRUqJOmIQLCFem", m3:"https://youtu.be/EhCUNyjgNDM?si=P3s-nKPsHPOosy0z", m4:"https://youtu.be/a9vVwp0qsiQ?si=S5EehOYipOcx7_pI", m5:"https://youtu.be/jV2c91rY1dw?si=dZi5fyGbAtC206EB", m6:"https://youtu.be/2AAXqXGNzHI?si=YvYLn9aBFGrIfIaJ", m7:"https://youtu.be/bCOUUVmgpFc?si=UxbOF_SG7m869Xal", m8:"https://youtu.be/nmLoNJx_vyI?si=KXh4hauh1SFeI0Gr", m9:"https://youtu.be/5uY2Im69fOk?si=natTRBAbpcpWx9ZL",
-  s1:"https://www.youtube.com/watch?v=9kBX1AcJqsQ", s2:"https://www.youtube.com/watch?v=2oosI6Wlw1I", s3:"https://www.youtube.com/watch?v=-InqntoCKbY", s4:"https://www.youtube.com/watch?v=Mg9ds6qPO9Q", s5:"https://www.youtube.com/watch?v=5JUp0WcvA40", s6:"https://www.youtube.com/watch?v=7SSnrNDUDL4"
+  s1:"https://www.youtube.com/watch?v=9kBX1AcJqsQ", s2:"https://www.youtube.com/watch?v=2oosI6Wlw1I", s3:"https://www.youtube.com/watch?v=-InqntoCKbY", s4:"https://www.youtube.com/watch?v=Mg9ds6qPO9Q", s5:"https://www.youtube.com/watch?v=5JUp0WcvA40", s6:"https://www.youtube.com/watch?v=7SSnrNDUDL4", s7:""
 };
 // 같은 PV의 번역본이 있으면 ko를 먼저 사용합니다.
 const promos = [
@@ -63,7 +64,7 @@ const stories = {
 const arcs={m:"망각편",s:"성신편"};
 const order={
  m:"coronation pale mountain feast pontus dust poison core m0 m1 m2 step rose turn m3 m4 ghost split magic home m5 m6 blood m7 sky1 sky2 seed hunt hero melt m8 m9".split(" "),
- s:"s1 s2 silver never farewell s3 s4 hymn s5 train s6".split(" ")
+ s:"s1 s2 silver never farewell s3 s4 hymn s5 train s6 s7".split(" ")
 };
 const unknownIds="wish sand always giant voyage white canvas fan whale diary oil kitchen profane".split(" ");
 const editNotes={
@@ -71,7 +72,7 @@ const editNotes={
  m4:[["step","4장 이후 · 원문은 망각편 7장 또는 성신편 2장 시작 전 감상을 강조해요."],["hero","선택 감상 · 4장의 배경. 사건 시점은 7~8장 사이예요."]],
  m6:[["profane","망각편 5~6장 클리어 직후 추천 · 미리암의 이야기"],["blood","7장 시작 전 · 등불 교회의 배경"],["rose","7장 시작 전 · 등장인물의 배경"]],
  m7:[["sky1","7장 이후 · 상편부터 감상"],["sky2","상편에 이어 감상"],["hunt","선택 감상 · 상·하편 이후"],["melt","8장 전 참고할 사건 해설"]],
- s2:[["never","성신편 2장 이후 · 에리카, 오를라, 릴리의 이야기도 함께 참고하세요."],["farewell","〈네버랜드에서 만나〉에 이어 감상"]],
+ s2:[["never","성신편 2장 이후"],["farewell","〈네버랜드에서 만나〉에 이어 감상 · 에리카, 오를라, 릴리의 이야기도 함께 참고하세요."]],
  s4:[["hymn","성신편 4장 클리어 후 · 후반부로 이어지는 이야기"]]
 };
 const byId=id=>document.getElementById(id);
@@ -179,3 +180,7 @@ appendPromoGroup(arcs.m, kadathPromos);
 appendPromoGroup(arcs.s, astralPromos);
 render();
 </script></html>
+
+
+
+
